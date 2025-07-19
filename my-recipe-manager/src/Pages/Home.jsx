@@ -82,9 +82,11 @@ function Home() {
    
   </div>
 
-  <footer>
-
-  </footer>
+   <div>
+        <footer className='footer1'>
+            <p> MealMate 🍽️. All rights reserved.</p>
+        </footer>
+    </div>
 
 </div>
      

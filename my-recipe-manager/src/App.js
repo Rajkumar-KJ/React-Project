@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import Recipes from './Pages/Recipes';
 import Addrecipe from './Pages/Addrecipe';
 import Editrecipes from './Pages/Editrecipes';
-import Footer from './Components/Footer';
+import RecipeDetail from './Pages/RecipeDetails';
 
 
 function App() {
@@ -19,8 +19,9 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/add-recipe" element={<Addrecipe />} />
           <Route path="/edit/:id" element={<Editrecipes />} />
+          <Route path="/recipes/:id" element={<RecipeDetail />} />
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </BrowserRouter>
   
