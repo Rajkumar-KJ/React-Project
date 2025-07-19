@@ -1,0 +1,175 @@
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.home-content {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+.home-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+
+.home-content p:first-of-type {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+
+.home-content p:last-of-type {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #dddddd;
+  opacity: 0.8;
+}
+
+.info {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 32px;
+  gap: 32px;
+}
+
+.info-div {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.8s ease;
+}
+
+.info-div:hover {
+  transform: translateY(-10px);
+  border:1px solid #333;
+}
+
+.info-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.info-div h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.info-div p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.info2{
+    margin-top: 70px;
+    /* display: flex; */
+}
+
+.info2-div{
+    display: flex;
+    justify-content: space-around;
+    /* margin-top: 60px; */
+}
+
+.info2-img{
+    margin-top: 50px;
+    width: 450px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.8s ease;
+}
+
+.info2-p{
+    width: 600px;
+}
+
+.info2-p p:first-of-type{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.info2-p p:last-of-type{
+    font-size:20px;
+    line-height: 40px;
+  color: #666;
+
+}
+
+.info2-div img:hover {
+  transform: translateX(10px);
+  border:1px solid #333;
+}
+
+.cover{
+    margin-top: 30px;
+    position: relative;
+}
+.cover img{
+    width:100%;
+    height:500px;
+    object-fit: cover;
+}
+.cover-info{
+    position: absolute;
+    bottom:-430%;
+    left: 26%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+.cover-info p{
+    transition: 2s;
+}
+
+.cover-info P:hover{
+    color: greenyellow;
+}
+
+.cover-info button{
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+    font-size: 20px;
+  transition: transform 0.8s ease;
+}
+
+.cover-info button:hover{
+    background-color: greenyellow;
+    transform: scale(1.1);
+
+}
