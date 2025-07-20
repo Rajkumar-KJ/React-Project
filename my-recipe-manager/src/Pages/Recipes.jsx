@@ -12,11 +12,12 @@ function Recipes() {
     prepTime: ''
   });
 
-  const filteredRecipes = recipes.filter((recipe) => {
-    const typeMatch = filter.type ? recipe.type === filter.type : true;
-    const cuisineMatch = filter.cuisine ? recipe.cuisine === filter.cuisine : true;
-    const prepTimeMatch = filter.prepTime ? recipe.prepTime <= parseInt(filter.prepTime) : true;
-    return typeMatch && cuisineMatch && prepTimeMatch;
+   const filteredRecipes = recipes.filter((recipe) => {
+    return (
+      (!filter.type || recipe.type === filter.type) &&
+      (!filter.cuisine || recipe.cuisine === filter.cuisine) &&
+      (!filter.prepTime || recipe.prepTime <= Number(filter.prepTime))
+    );
   });
 
   return (
@@ -46,7 +47,6 @@ function Recipes() {
       <div className="recipe-list">
         {filteredRecipes.map((recipe) => (
           <div className="recipe-card" key={recipe.id}>
-            {/* <img src={recipe.image} alt={recipe.name} /> */}
             <img className="recipe-img" src={recipe.image} alt={recipe.name} />
 
             <h2>{recipe.name}</h2>

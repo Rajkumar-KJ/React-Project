@@ -1,5 +1,7 @@
 import React, { createContext, useState } from 'react';
-
+// import Recipes from './Recipes';
+// import AddRecipe from './Addrecipe';
+// import RecipeDetail from './RecipeDetails';
 
 export const RecipeContext = createContext();
 
@@ -45,6 +47,11 @@ export const RecipeProvider = ({ children }) => {
   return (
     <RecipeContext.Provider value={{ recipes, addRecipe, removeRecipe }}>
       {children}
+      {/* <Recipes/>
+      <AddRecipe/>
+      <RecipeProvider/>
+      <RecipeDetail/> */}
+
     </RecipeContext.Provider>
   );
 };

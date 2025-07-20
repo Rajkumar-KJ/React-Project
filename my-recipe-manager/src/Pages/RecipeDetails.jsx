@@ -1,21 +1,13 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { RecipeContext } from './RecipeContext'; // adjust path if needed
+import { RecipeContext } from './RecipeContext'; 
 import './RecipeDetails.css';
 
 function RecipeDetail() {
   const { id } = useParams();
   const { recipes } = useContext(RecipeContext);
 
-  if (!recipes || recipes.length === 0) {
-    return <p>Loading recipes...</p>;
-  }
-
   const recipe = recipes.find(r => r.id === parseInt(id));
-
-  if (!recipe) {
-    return <p>Recipe not found</p>;
-  }
 
   return (
     <div className="recipe-detail">
@@ -27,8 +19,8 @@ function RecipeDetail() {
 
       <h3>Ingredients</h3>
       <ol>
-        {recipe.ingredients.map((item, index) => (
-          <li key={index}>{item}</li>
+        {recipe.ingredients.map((item) => (
+          <li>{item}</li>
         ))}
       </ol>
 

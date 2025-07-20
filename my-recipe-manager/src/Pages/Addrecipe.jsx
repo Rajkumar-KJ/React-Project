@@ -7,7 +7,7 @@ import useRecipeStorage from '../Pages/CustomHooks';// import context
 function AddRecipe() {
   const navigate = useNavigate();
   const { addRecipe } = useContext(RecipeContext); 
-  const saveRecipe = useRecipeStorage();// use context instead of props
+  const saveRecipe = useRecipeStorage();// use context 
 
   const [formData, setFormData] = useState({
     name: '',
@@ -35,11 +35,11 @@ function AddRecipe() {
       ...formData,
       id: Date.now(), // Unique ID
       prepTime: parseInt(formData.prepTime),
-      ingredients: formData.ingredients.split(',').map(item => item.trim())
+      ingredients: formData.ingredients.split(',')
     };
 
     addRecipe(newRecipe); 
-     saveRecipe(formData);// use from context
+     saveRecipe(formData);// custom hook
     navigate('/recipes');
   };
 
