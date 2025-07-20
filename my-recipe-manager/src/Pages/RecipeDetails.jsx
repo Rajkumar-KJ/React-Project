@@ -1,40 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { RecipeContext } from './RecipeContext'; // adjust path if needed
 import './RecipeDetails.css';
-
-const recipeData = [
-  {
-    id: 1,
-    name: "Veggie Biryani",
-    cuisine: "Indian",
-    type: "Veg",
-    prepTime: 45,
-    image: "/images/r3.jpg",
-    description: "Spicy rice dish with vegetables",
-    ingredients: ["Rice", "Carrot", "Beans", "Spices"],
-    procedure: "Cook rice, sauté vegetables, mix with spices and rice.",
-    nutrients: "Calories: 400 | Protein: 8g"
-  },
-   {
-    id: 2,
-    name: "Veggie Biryani",
-    cuisine: "Indian",
-    type: "Veg",
-    prepTime: 45,
-    image: "/images/r3.jpg",
-    description: "Spicy rice dish with vegetables",
-    ingredients: ["Rice", "Carrot", "Beans", "Spices"],
-    procedure: "Cook rice, sauté vegetables, mix with spices and rice.",
-    nutrients: "Calories: 400 | Protein: 8g"
-  },
-  // ... other recipes
-];
 
 function RecipeDetail() {
   const { id } = useParams();
-  const recipe = recipeData.find(r => r.id === parseInt(id));
+  const { recipes } = useContext(RecipeContext);
 
-  if (!recipe) return <p>Recipe not found</p>;
+  if (!recipes || recipes.length === 0) {
+    return <p>Loading recipes...</p>;
+  }
+
+  const recipe = recipes.find(r => r.id === parseInt(id));
+
+  if (!recipe) {
+    return <p>Recipe not found</p>;
+  }
 
   return (
     <div className="recipe-detail">
@@ -43,14 +24,17 @@ function RecipeDetail() {
       <p><strong>Cuisine:</strong> {recipe.cuisine}</p>
       <p><strong>Type:</strong> {recipe.type}</p>
       <p><strong>Prep Time:</strong> {recipe.prepTime} minutes</p>
+
       <h3>Ingredients</h3>
       <ol>
-        {recipe.ingredients.map((item) => (
-          <li>{item}</li>
+        {recipe.ingredients.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ol>
+
       <h3>Cooking Procedure</h3>
       <p>{recipe.procedure}</p>
+
       <h3>Nutritional Info</h3>
       <p>{recipe.nutrients}</p>
     </div>
