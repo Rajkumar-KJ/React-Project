@@ -39,7 +39,7 @@ function AddRecipe() {
     };
 
     addRecipe(newRecipe); 
-     saveRecipe(formData);// custom hook
+    saveRecipe(formData);// custom hook
     navigate('/recipes');
   };
 
@@ -56,7 +56,7 @@ function AddRecipe() {
           <option value="Non-Veg">Non-Veg</option>
         </select>
         <input name="prepTime" type="number" placeholder="Prep Time (minutes)" onChange={handleChange} required />
-        <input name="image" placeholder="Image URL (/images/your-img.jpg)" onChange={handleChange} required />
+        <input name="image" placeholder="Image URL" onChange={handleChange} required />
         <textarea name="description" placeholder="Short Description" onChange={handleChange} required />
         <textarea name="ingredients" placeholder="Ingredients (comma separated)" onChange={handleChange} required />
         <textarea name="procedure" placeholder="Cooking Procedure" onChange={handleChange} required />

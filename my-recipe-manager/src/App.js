@@ -4,7 +4,7 @@ import Nav from './Components/Nav';
 import Home from './Pages/Home';
 import Recipes from './Pages/Recipes';
 import AddRecipe from './Pages/Addrecipe';
-// import Editrecipes from './Pages/Editrecipes';
+
 import RecipeDetail from './Pages/RecipeDetails';
 import { RecipeProvider } from './Pages/RecipeContext';
 
@@ -17,8 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
-            <Route path="/add-recipe" element={<AddRecipe />} />
-            {/* <Route path="/edit/:id" element={<EditRecipes />} /> */}
+            <Route path="/add-recipe" element={<AddRecipe />} />         
             <Route path="/recipes/:id" element={<RecipeDetail />} />
           </Routes>
         </div>
